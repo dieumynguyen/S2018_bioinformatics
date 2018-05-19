@@ -1,0 +1,411 @@
+-bash-4.2$ module load fastqc/0.11.5
+-bash-4.2$ fastqc
+Exception in thread "main" java.awt.HeadlessException: 
+No X11 DISPLAY variable was set, but this program performed an operation which requires it.
+	at java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:204)
+	at java.awt.Window.<init>(Window.java:536)
+	at java.awt.Frame.<init>(Frame.java:420)
+	at java.awt.Frame.<init>(Frame.java:385)
+	at javax.swing.JFrame.<init>(JFrame.java:189)
+	at uk.ac.babraham.FastQC.FastQCApplication.<init>(FastQCApplication.java:63)
+	at uk.ac.babraham.FastQC.FastQCApplication.main(FastQCApplication.java:332)
+-bash-4.2$ help
+GNU bash, version 4.2.46(2)-release (x86_64-redhat-linux-gnu)
+These shell commands are defined internally.  Type `help' to see this list.
+Type `help name' to find out more about the function `name'.
+Use `info bash' to find out more about the shell in general.
+Use `man -k' or `info' to find out more about commands not in this list.
+
+A star (*) next to a name means that the command is disabled.
+
+ job_spec [&]                                  history [-c] [-d offset] [n] or history -a>
+ (( expression ))                              if COMMANDS; then COMMANDS; [ elif COMMAND>
+ . filename [arguments]                        jobs [-lnprs] [jobspec ...] or jobs -x com>
+ :                                             kill [-s sigspec | -n signum | -sigspec] p>
+ [ arg... ]                                    let arg [arg ...]
+ [[ expression ]]                              local [option] name[=value] ...
+ alias [-p] [name[=value] ... ]                logout [n]
+ bg [job_spec ...]                             mapfile [-n count] [-O origin] [-s count] >
+ bind [-lpvsPVS] [-m keymap] [-f filename] [>  popd [-n] [+N | -N]
+ break [n]                                     printf [-v var] format [arguments]
+ builtin [shell-builtin [arg ...]]             pushd [-n] [+N | -N | dir]
+ caller [expr]                                 pwd [-LP]
+ case WORD in [PATTERN [| PATTERN]...) COMMA>  read [-ers] [-a array] [-d delim] [-i text>
+ cd [-L|[-P [-e]]] [dir]                       readarray [-n count] [-O origin] [-s count>
+ command [-pVv] command [arg ...]              readonly [-aAf] [name[=value] ...] or read>
+ compgen [-abcdefgjksuv] [-o option]  [-A ac>  return [n]
+ complete [-abcdefgjksuv] [-pr] [-DE] [-o op>  select NAME [in WORDS ... ;] do COMMANDS; >
+ compopt [-o|+o option] [-DE] [name ...]       set [-abefhkmnptuvxBCHP] [-o option-name] >
+ continue [n]                                  shift [n]
+ coproc [NAME] command [redirections]          shopt [-pqsu] [-o] [optname ...]
+ declare [-aAfFgilrtux] [-p] [name[=value] .>  source filename [arguments]
+ dirs [-clpv] [+N] [-N]                        suspend [-f]
+ disown [-h] [-ar] [jobspec ...]               test [expr]
+ echo [-neE] [arg ...]                         time [-p] pipeline
+ enable [-a] [-dnps] [-f filename] [name ...>  times
+ eval [arg ...]                                trap [-lp] [[arg] signal_spec ...]
+ exec [-cl] [-a name] [command [arguments ..>  true
+ exit [n]                                      type [-afptP] name [name ...]
+ export [-fn] [name[=value] ...] or export ->  typeset [-aAfFgilrtux] [-p] name[=value] .>
+ false                                         ulimit [-SHacdefilmnpqrstuvx] [limit]
+ fc [-e ename] [-lnr] [first] [last] or fc ->  umask [-p] [-S] [mode]
+ fg [job_spec]                                 unalias [-a] name [name ...]
+ for NAME [in WORDS ... ] ; do COMMANDS; don>  unset [-f] [-v] [name ...]
+ for (( exp1; exp2; exp3 )); do COMMANDS; do>  until COMMANDS; do COMMANDS; done
+ function name { COMMANDS ; } or name () { C>  variables - Names and meanings of some she>
+ getopts optstring name [arg]                  wait [id]
+ hash [-lr] [-p pathname] [-dt] [name ...]     while COMMANDS; do COMMANDS; done
+ help [-dms] [pattern ...]                     { COMMANDS ; }
+-bash-4.2$ module list
+
+Currently Loaded Modules:
+  1) fastqc/0.11.5
+
+-bash-4.2$ module avail
+
+------------------------------ /opt/lmod/lmod/modulefiles/Core ------------------------------
+   JAGS/4.3.0                             python/2.7.14/cycler/0.10.0
+   R/3.3.0                                python/2.7.14/cython/0.24
+   RSEM/1.3.0                             python/2.7.14/dateutil/2.5.3
+   STAR/2.5.2b                            python/2.7.14/gensim/3.2.0
+   bamtools/2.4.0                         python/2.7.14/htseq/0.9.1
+   bcftools/1.2                           python/2.7.14/idna/2.6
+   bcl2fastq2/2.2.0                       python/2.7.14/jmespath/0.9.3
+   bedtools/2.25.0                        python/2.7.14/matplotlib/1.5.1
+   boost/1.61.0                           python/2.7.14/networkx/2.0
+   bowtie/1.1.2                           python/2.7.14/nose/1.3.7
+   bowtie/2.2.9                    (D)    python/2.7.14/numpy/1.11.0
+   bwa/0.7.15                             python/2.7.14/pandas/0.18.1
+   bzip2/1.0.6                            python/2.7.14/pybedtools/0.7.8
+   cellranger/2.0.2                       python/2.7.14/pybigwig/0.3.6
+   charmm/35b6                            python/2.7.14/pycogent/1.5.3
+   cistem/1.0.0                           python/2.7.14/pyparsing/2.1.5
+   clusterutils/1.0                       python/2.7.14/pysam/0.9.0
+   cufflinks/2.2.1                        python/2.7.14/pytz/2016.6.1
+   curl/7.49.1                            python/2.7.14/requests/2.18.4
+   eman/2.2                               python/2.7.14/rseqc/2.6.4
+   eman/2.12                       (D)    python/2.7.14/scikit-learn/0.19.1
+   fastqc/0.11.5                   (L)    python/2.7.14/scipy/0.17.1
+   fastx-toolkit/0.0.13                   python/2.7.14/seaborn/0.7.1
+   fftw/3.3.5                             python/2.7.14/setuptools/23.0.0
+   gatk/3.3-0                             python/2.7.14/six/1.10.0
+   gatk/3.7.0                      (D)    python/2.7.14/smart_open/1.5.6
+   gcc/5.4.0                              python/2.7.14/urllib3/1.22
+   gcc/7.1.0                              python/2.7.14/xgboost/0.60
+   gcc/7.2.0                       (D)    python/2.7.14/xopen/0.1.0
+   gmp/6.1.0                              python/3.6.3
+   gnuplot/5.0.3                          python/3.6.3/boto/2.48.0
+   hisat/0.1.6                            python/3.6.3/boto3/1.5.19
+   hisat2/2.1.0                           python/3.6.3/botocore/1.8.33
+   hmmer/3.1b2                            python/3.6.3/cycler/0.10.0
+   icu/57.1                               python/3.6.3/cython/0.24
+   igv/2.3.75                             python/3.6.3/dateutil/2.5.3
+   igvtools/2.3.75                        python/3.6.3/gensim/3.2.0
+   infernal/1.1.2                         python/3.6.3/htseq/0.9.1
+   intel-fortran/2013                     python/3.6.3/matplotlib/1.5.1
+   java/1.8.0_101                         python/3.6.3/networkx/2.0
+   jellyfish/2.2.6                        python/3.6.3/nose/1.3.7
+   kallisto/0.43.0                        python/3.6.3/numpy/1.11.0
+   kallisto/0.43.1                 (D)    python/3.6.3/pybigwig/0.3.6
+   lmod/6.4.5                             python/3.6.3/pyparsing/2.1.5
+   matlab/R2017a                          python/3.6.3/pysam/0.9.0
+   matlab/R2017b                   (D)    python/3.6.3/pytz/2016.6.1
+   meme/4.12.0                            python/3.6.3/scikit-learn/0.19.1
+   mpc/1.0.3                              python/3.6.3/scipy/0.17.1
+   mpfr/3.1.4                             python/3.6.3/setuptools/23.0.0
+   mpich/3.2                              python/3.6.3/six/1.10.0
+   mpich/3.2.1                     (D)    python/3.6.3/xgboost/0.60
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ cd /scratch/Users/ding1018
+-bash-4.2$ mkdir fastqc_project
+-bash-4.2$ cd fastqc_project/
+-bash-4.2$ ls
+-bash-4.2$ mkdir fastq
+-bash-4.2$ mkdir eofiles
+-bash-4.2$ mkdir qual
+-bash-4.2$ pwd
+/scratch/Users/ding1018/fastqc_project
+-bash-4.2$ cd /scratch/Shares/public/sread2017/day_4/files_for_worksheets_and_homework/
+-bash-4.2$ ls
+adaptor_dimers.fastq  Example_1.fastq.gz  Example_4.fastq.gz
+Day4HW_R1.fastq       Example_2.fastq.gz  Paired_R1.fastq
+Day4HW_R2.fastq       Example_3.fastq.gz  Paired_R2.fastq
+-bash-4.2$ cp /scratch/Shares/public/sread2017/day_4/files_for_worksheets_and_homework/Example_1.fastq.gz /scratch/Users/ding1018/fastqc_project
+-bash-4.2$ ls
+adaptor_dimers.fastq  Day4HW_R2.fastq     Example_2.fastq.gz  Example_4.fastq.gz  Paired_R2.fastq
+Day4HW_R1.fastq       Example_1.fastq.gz  Example_3.fastq.gz  Paired_R1.fastq
+-bash-4.2$ pwd
+/scratch/Shares/public/sread2017/day_4/files_for_worksheets_and_homework
+-bash-4.2$ cp /scratch/Shares/public/sread2017/day_4/files_for_worksheets_and_homework/Example_1.fastq.gz /scratch/Users/ding1018/fastqc_project/fastq/.
+-bash-4.2$ cd /scratch/Users/ding1018/fastqc_project
+-bash-4.2$ ls
+eofiles  Example_1.fastq.gz  fastq  qual
+-bash-4.2$ cd fastq/
+-bash-4.2$ ls
+Example_1.fastq.gz
+-bash-4.2$ cd /scratch/Users/ding1018/fastqc_project/fastq/
+-bash-4.2$ ls
+Example_1.fastq.gz
+-bash-4.2$ gunzip *.gz
+-bash-4.2$ ls
+Example_1.fastq
+-bash-4.2$ less Example_1.fastq 
+-bash-4.2$ ls -alh
+total 42M
+drwxr-xr-x 2 ding1018 iqbio2017   1 Jan 31 16:31 .
+drwxr-xr-x 5 ding1018 iqbio2017   4 Jan 31 16:22 ..
+-rwxr-xr-x 1 ding1018 iqbio2017 42M Jan 31 16:23 Example_1.fastq
+-bash-4.2$ head -20 Example_1.fastq 
+@HWI-ST753_52:1:1101:1179:2010/11
+ANCAAATCAGAGGATTCAGCAGAAATTCTCTGAACTTGAATAGTCTGGCT
++
+B#BABEEEEEEHHHHHHHHHHGHHHHHHHHHHHHHHHHHHHHHCHHEHFH
+@HWI-ST753_52:1:1101:1161:2061/11
+AAACTGAACCCCCAGTCTCACCAATGCATGGAATTCTCGGGTGTGGAATT
++
+HHHHHHHHHFHHHHHHHHHGHHHGHHHHHHFHFHHHHHHHFDHDHHFEEH
+@HWI-ST753_52:1:1101:1195:2064/11
+TTCTAGTGTGGCTTAGTAGGAAGGACCAGGCTCAATTCCTAGCTTTGTGT
++
+HHHHHHHHHHHHHHFFHGHHGGHHEHHHHHHHHHHFHHHHBFFFFHDFFD
+@HWI-ST753_52:1:1101:1314:2025/11
+GTGTGAGCCCGGCTAGCTCAGTCGGTAGAGCATGAGACTCTTAATCTCAG
++
+GGGGGGGGGGGGGGGE.EDCECEEE?DB?BAA=D;D<DDCFGBFFDEBEF
+@HWI-ST753_52:1:1101:1408:2026/11
+TACACACCGCCCGTCGCTACTACTGGAATTCTCGGGTGCCAAGGAACTCC
++
+HHHHHG3GGGHHHHHHHHHHGGHHHHGHHHGGHHHHDHFHFFFFCEHFEH
+-bash-4.2$ 
+-bash-4.2$ cd 
+-bash-4.2$ cd ../
+-bash-4.2$ pwd
+/Users
+-bash-4.2$ chmod 777 dowellde/
+chmod: changing permissions of ‘dowellde/’: Operation not permitted
+-bash-4.2$ ls
+brgi8649  ding1018  dongmei  dowellde  elpr2080  jast1849  jeku7901  qiya9811  suli6859  timmonsd
+-bash-4.2$ cd dowellde/
+-bash-4.2$ ls
+4521        bowtie.template.pbs    MA_DMSO_Groseq_S7_R1_001_map.slurm  RNA_Eli_repA_R1.sorted.bam.bai
+bowtie.err  fastQC.template.slurm  perl5                               test.slurm
+bowtie.log  Feb8examples           RNA_Eli_repA_R1.sorted.bam
+-bash-4.2$ cp /Users/dowellde/fastQC.template.slurm /scratch/Users/ding1018/fastqc_project/.
+-bash-4.2$ ls
+4521        bowtie.template.pbs    MA_DMSO_Groseq_S7_R1_001_map.slurm  RNA_Eli_repA_R1.sorted.bam.bai
+bowtie.err  fastQC.template.slurm  perl5                               test.slurm
+bowtie.log  Feb8examples           RNA_Eli_repA_R1.sorted.bam
+-bash-4.2$ cd /scratch/Users/ding1018/fastqc_project
+-bash-4.2$ ls
+eofiles  Example_1.fastq.gz  fastq  fastQC.template.slurm  qual
+-bash-4.2$ rm Example_1.fastq.gz 
+-bash-4.2$ ls
+eofiles  fastq  fastQC.template.slurm  qual
+-bash-4.2$ more fast
+fast: No such file or directory
+-bash-4.2$ more fastQC.template.slurm 
+#!/bin/bash
+#SBATCH --job-name=RDD_FASTQC # Job name
+#SBATCH --mail-type=NONE # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=dowellde@colorado.edu# Where to send mail
+#SBATCH --nodes=1  # Number of distinct nodes requested
+#SBATCH --ntasks=32# Number of CPU (processer cores i.e. tasks) 
+#SBATCH --time=48:00:00 # Time limit hrs:min:sec
+#SBATCH -p long
+#SBATCH --mem=200gb # Memory limit
+#SBATCH --output=/scratch/Users/dowellde/project/e_and_o/RDD_FASTQC.%j.out
+#SBATCH --error=/scratch/Users/dowellde/project/e_and_o/RDD_FASTQC.%j.err
+
+pwd; hostname; date
+date
+module load fastqc/0.11.5
+fastqc /scratch/Users/dowellde/project/data/Example_1.fastq -o /scratch/Users/dowellde/project/qual/
+echo qual
+date
+date
+-bash-4.2$ ll
+total 2
+drwxr-xr-x 2 ding1018 iqbio2017   0 Jan 31 16:17 eofiles
+drwxr-xr-x 2 ding1018 iqbio2017   1 Jan 31 16:31 fastq
+-rwxr-xr-x 1 ding1018 iqbio2017 727 Jan 31 16:38 fastQC.template.slurm
+drwxr-xr-x 2 ding1018 iqbio2017   0 Jan 31 16:17 qual
+-bash-4.2$ nano fastQC.template.slurm 
+-bash-4.2$ nano fastQC.template.slurm 
+-bash-4.2$ nano fastQC.template.slurm 
+-bash-4.2$ nano fastQC.template.slurm 
+-bash-4.2$ sbatch fastQC.template.slurm 
+Submitted batch job 166811
+-bash-4.2$ qstat
+Job id              Name             Username        Time Use S Queue          
+------------------- ---------------- --------------- -------- - ---------------
+162219              relion_J01_3DCla cili7484        08:07:50 R long           
+166538              prodgb_full_baaa arde8511        00:17:31 C short          
+166557              prodgb_full_lig_ arde8511        00:11:19 R short          
+166586              pure_diff        shla6400        00:07:15 R short          
+166607              meme_out         jeja4312        00:05:44 R short          
+166608              meme_out         jeja4312        00:05:43 R short          
+166609              meme_out         jeja4312        00:05:43 R short          
+166613              meme_out         jeja4312        00:05:42 R short          
+166614              meme_out         jeja4312        00:05:42 R short          
+166615              meme_out         jeja4312        00:05:38 R short          
+166622              meme_out         jeja4312        00:05:36 R short          
+166724              lc               amgh5286        00:04:09 R short          
+166725              lc               amgh5286        00:04:09 R short          
+166726              lc               amgh5286        00:04:09 R short          
+166727              lc               amgh5286        00:04:09 R short          
+166728              lc               amgh5286        00:04:09 R short          
+166729              lc               amgh5286        00:04:09 R short          
+166730              lc               amgh5286        00:04:09 R short          
+166731              lc               amgh5286        00:04:09 R short          
+166732              lc               amgh5286        00:04:09 R short          
+166733              lc               amgh5286        00:04:09 R short          
+166734              lc               amgh5286        00:04:09 R short          
+166735              lc               amgh5286        00:04:09 R short          
+166736              lc               amgh5286        00:04:09 R short          
+166737              lc               amgh5286        00:04:09 R short          
+166738              lc               amgh5286        00:04:09 R short          
+166739              lc               amgh5286        00:04:09 R short          
+166740              lc               amgh5286        00:04:09 R short          
+166741              lc               amgh5286        00:04:09 R short          
+166742              lc               amgh5286        00:04:09 R short          
+166743              lc               amgh5286        00:04:09 R short          
+166744              lc               amgh5286        00:04:09 R short          
+166745              lc               amgh5286        00:04:09 R short          
+166746              lc               amgh5286        00:04:09 R short          
+166747              lc               amgh5286        00:04:09 R short          
+166748              lc               amgh5286        00:04:09 R short          
+166749              lc               amgh5286        00:04:09 R short          
+166750              lc               amgh5286        00:04:09 R short          
+166751              lc               amgh5286        00:04:09 R short          
+166752              lc               amgh5286        00:04:09 R short          
+166753              lc               amgh5286        00:04:09 R short          
+166754              lc               amgh5286        00:04:09 R short          
+166755              lc               amgh5286        00:04:09 R short          
+166756              lc               amgh5286        00:04:09 R short          
+166757              lc               amgh5286        00:04:09 R short          
+166758              lc               amgh5286        00:04:09 R short          
+166759              lc               amgh5286        00:04:09 R short          
+166760              lc               amgh5286        00:04:09 R short          
+166761              lc               amgh5286        00:04:09 R short          
+166718              lc               amgh5286        00:04:09 R short          
+166768              cuffdiff         mathenyt        00:02:02 R short          
+166785              B2B10GROseq-E_tr sasse           00:01:20 R short          
+166786              rcv2-en-es-news  yofu1973        00:01:15 R titan          
+166788              B2B10GROseq-TE_t sasse           00:01:09 R short          
+166789              B2B10GROseq-D_tr sasse           00:01:09 R short          
+166790              B2B10GROseq-TD_t sasse           00:01:09 R short          
+166792              B2B10GROseq-E2_t sasse           00:01:08 R short          
+166793              B2B10GROseq-TE2_ sasse           00:01:07 R short          
+166796              B2B10GROseq-D2_t sasse           00:01:06 R short          
+166798              B2B10GROseq-TD2_ sasse           00:01:05 R short          
+166808              RDD_FASTQC       dowellde        00:00:00 C short          
+166809              prodgb_full_baaa arde8511        00:00:00 R short          
+166810              EX1_FASTQC       mism6893        00:00:00 C short          
+166811              RDD_FASTQC       ding1018        00:00:00 C short          
+166812              DTC_FASTQC       daco1450        00:00:00 C short          
+166813              RDD_FASTQC       jade8185        00:00:00 C short          
+-bash-4.2$ ls
+eofiles  fastq  fastQC.template.slurm  qual
+-bash-4.2$ ls eofiles/
+RDD_FASTQC.166811.err  RDD_FASTQC.166811.out
+-bash-4.2$ cd eofiles/
+-bash-4.2$ more RDD_FASTQC.166811.*
+::::::::::::::
+RDD_FASTQC.166811.err
+::::::::::::::
+Started analysis of Example_1.fastq
+Approx 5% complete for Example_1.fastq
+Approx 10% complete for Example_1.fastq
+Approx 15% complete for Example_1.fastq
+Approx 20% complete for Example_1.fastq
+Approx 25% complete for Example_1.fastq
+Approx 30% complete for Example_1.fastq
+Approx 35% complete for Example_1.fastq
+Approx 40% complete for Example_1.fastq
+Approx 45% complete for Example_1.fastq
+Approx 50% complete for Example_1.fastq
+Approx 55% complete for Example_1.fastq
+Approx 60% complete for Example_1.fastq
+Approx 65% complete for Example_1.fastq
+Approx 70% complete for Example_1.fastq
+Approx 75% complete for Example_1.fastq
+Approx 80% complete for Example_1.fastq
+Approx 85% complete for Example_1.fastq
+Approx 90% complete for Example_1.fastq
+Approx 95% complete for Example_1.fastq
+::::::::::::::
+RDD_FASTQC.166811.out
+::::::::::::::
+/scratch/Users/ding1018/fastqc_project
+fijinode-05
+Wed Jan 31 17:04:46 MST 2018
+Wed Jan 31 17:04:46 MST 2018
+Analysis complete for Example_1.fastq
+qual
+Wed Jan 31 17:04:54 MST 2018
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ cd ../
+-bash-4.2$ ls
+eofiles  fastq  fastQC.template.slurm  qual
+-bash-4.2$ cd qual/
+-bash-4.2$ ls
+Example_1_fastqc.html  Example_1_fastqc.zip
+-bash-4.2$ nano Example_1_fastqc.html 
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ pwd
+/scratch/Users/ding1018/fastqc_project/qual
+-bash-4.2$ exi
+-bash: exi: command not found
+-bash-4.2$ exit
+logout
+Connection to fiji.colorado.edu closed.
+cu-biot-7-10:~ dieumynguyen$ scp ding1018@fiji.colorado.edu:/scratch/Users/ding1018/fastqc_project/qua/Example_1.fastqc.html
+usage: scp [-12346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
+           [-l limit] [-o ssh_option] [-P port] [-S program]
+           [[user@]host1:]file1 ... [[user@]host2:]file2
+cu-biot-7-10:~ dieumynguyen$ scp ding1018@fiji.colorado.edu:/scratch/Users/ding1018/fastqc_project/qua/Example_1_fastqc.html
+usage: scp [-12346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
+           [-l limit] [-o ssh_option] [-P port] [-S program]
+           [[user@]host1:]file1 ... [[user@]host2:]file2
+cu-biot-7-10:~ dieumynguyen$ scp ding1018@fiji.colorado.edu:/scratch/Users/ding1018/fastqc_project/qual/Example_1_fastqc.html
+usage: scp [-12346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
+           [-l limit] [-o ssh_option] [-P port] [-S program]
+           [[user@]host1:]file1 ... [[user@]host2:]file2
+cu-biot-7-10:~ dieumynguyen$ ls
+1c2.png				Pictures			matlab_crash_dump.47354-1
+Applications			Public				matlab_crash_dump.7788-1
+Calibre Library			Scripts				miniconda3
+Creative Cloud Files		Test.java			my_data.pickle
+Desktop				Untitled.ipynb			oasys.log
+Documents			Untitled1.ipynb			pmf.R
+Downloads			Untitled2.ipynb			py3_kernel
+Dropbox				Wine Files			q.log
+Dropbox (BYB papers)		anaconda3			rodeo.log
+Dropbox (Old)			female_age.png			sinwave.png
+HMM-Copy1.ipynb			grasshopper abstract.txt	summary.txt
+HMM-Copy2.ipynb			hw4.Rmd				testing
+HMM.ipynb			hw4.html			titanic-separation-gam.png
+HW3.R				ibt_application.log		titanic-separation-glm.png
+Library				ibtsa.log			titanic-survival-gam.png
+MEGA				male_age.png			titanic-survival-glm.png
+Movies				matlab_crash_dump.10198-1	untitled.txt
+Music				matlab_crash_dump.13176-1
+OUTPUT.0000.nc			matlab_crash_dump.19923-1
+cu-biot-7-10:~ dieumynguyen$ scp ding1018@fiji.colorado.edu:/scratch/Users/ding1018/fastqc_project/qual/Example_1_fastqc.html /Users/dieumynguyen/Desktop/
+ding1018@fiji.colorado.edu's password: 
+Example_1_fastqc.html                                                                100%  327KB   3.1MB/s   00:00    
+cu-biot-7-10:~ dieumynguyen$ 

@@ -1,0 +1,330 @@
+Last login: Mon Mar 12 18:52:48 on ttys001
+Hello, Dieu My!
+cu-vpn-colorado-edu-198:~ dieumynguyen$ ssh ding1018@colorado.edu
+ssh: connect to host colorado.edu port 22: Connection refused
+cu-vpn-colorado-edu-198:~ dieumynguyen$ ssh ding1018@fiji.colorado.edu
+ding1018@fiji.colorado.edu's password: 
+Last login: Sun Mar 11 08:11:26 2018 from cu-biot-7-10.203.152.133.int.colorado.edu
++-----------------------------------------------------------------------------+
+|                   *****Warning Notice*****                                  |
+|This system is restricted solely to University of Colorado authorized users  |
+|for legitimate business purposes only.  The actual of attempted unauthorized |
+|access, use or modification of this system is strictly prohibited by the     |
+|University of Colorado.                                                      |
+|The use of this system is monitored and recorded for administrative and      |
+|security reasons.  Anyone accessing this system expressly consents to such   |
+|monitoring and is advised that is such monitoring reveals possible evidence  |
+|of criminal activity, University officals may provide evidence of such       |
+|activity to law enforcement officials.  All users must comply with the       |
+|University of Colorado security instructions regarding the protection of the |
+|University of Colorado's information.                                        |
+|                                                                             |
+|Cluster usage information is available at the BioFrontiers Core page --      |
+|http://bficores.colorado.edu/biofrontiers-it/cluster-computing/              |
+|                                                                             |
+|For assistance, please submit a ticket to our ticketing system --            |
+|bf-rscrh@colorado.edu .                                                      |
+|                                                                             |
++-----------------------------------------------------------------------------+
+
+-bash-4.2$ pwd
+/Users/ding1018
+-bash-4.2$ ls
+47HS  bee_brain  ncbi  perl5  R  script.slurm  testing_things
+-bash-4.2$ cd bee_brain/
+-bash-4.2$ ls
+eofiles  get_FASTQC.slurm  get_SRR.slurm  qual  SRR4045881.fastq  test.py  test.sh
+-bash-4.2$ cd q
+-bash: cd: q: No such file or directory
+-bash-4.2$ cd qual
+-bash-4.2$ ls
+-bash-4.2$ qstat
+Job id              Name             Username        Time Use S Queue          
+------------------- ---------------- --------------- -------- - ---------------
+238093              annealing        shha1721        03:21:53 R long           
+238094              annealing        shha1721        03:21:53 R long           
+248095              theano_first_try adth9395        02:10:29 R titan          
+248370              des              shla6400        01:03:12 R long           
+248371              des2             shla6400        01:03:12 R long           
+248375              Tleng            shla6400        01:01:40 R long           
+248389              annealing        shha1721        00:22:28 R long           
+248390              annealing        shha1721        00:22:28 R long           
+248391              annealing        shha1721        00:22:28 R long           
+248392              annealing        shha1721        00:22:28 R long           
+248393              annealing        shha1721        00:22:28 R long           
+248394              annealing        shha1721        00:22:28 R long           
+248395              annealing        shha1721        00:22:28 R long           
+248396              annealing        shha1721        00:22:28 R long           
+248397              annealing        shha1721        00:22:28 R long           
+248398              annealing        shha1721        00:22:28 R long           
+248399              annealing        shha1721        00:22:28 R long           
+248400              annealing        shha1721        00:22:28 R long           
+248401              annealing        shha1721        00:22:28 R long           
+248402              annealing        shha1721        00:22:28 R long           
+248403              annealing        shha1721        00:22:28 R long           
+248404              annealing        shha1721        00:22:28 R long           
+248405              annealing        shha1721        00:22:28 R long           
+248406              annealing        shha1721        00:22:28 R long           
+248407              annealing        shha1721        00:22:28 R long           
+248408              annealing        shha1721        00:22:28 R long           
+248409              annealing        shha1721        00:22:28 R long           
+248410              annealing        shha1721        00:22:28 R long           
+248411              annealing        shha1721        00:22:28 R long           
+248412              annealing        shha1721        00:22:28 R long           
+248413              annealing        shha1721        00:22:28 R long           
+248414              annealing        shha1721        00:22:28 R long           
+248415              annealing        shha1721        00:22:28 R long           
+248416              annealing        shha1721        00:22:28 R long           
+248417              annealing        shha1721        00:22:28 R long           
+248418              annealing        shha1721        00:22:28 R long           
+248419              annealing        shha1721        00:22:28 R long           
+248420              annealing        shha1721        00:22:28 R long           
+248421              annealing        shha1721        00:22:28 R long           
+248422              annealing        shha1721        00:22:28 R long           
+248423              annealing        shha1721        00:22:28 R long           
+248424              annealing        shha1721        00:22:28 R long           
+248425              prodgb_full_baaa arde8511        00:15:49 R short          
+248426              prodgb_full_lig_ arde8511        00:15:30 R short          
+248452              Neo4j-0-2        colemasj        00:09:13 R long           
+248533              annealing        shha1721        00:07:09 R long           
+248534              annealing        shha1721        00:07:09 R long           
+248538              Neo4j-1-2        colemasj        00:06:09 R long           
+248994              dict_limit       shha1721        00:03:09 R long           
+248995              dict_limit       shha1721        00:03:09 R long           
+248996              dict_limit       shha1721        00:03:09 R long           
+248997              dict_limit       shha1721        00:03:09 R long           
+248998              dict_limit       shha1721        00:03:09 R long           
+248999              dict_limit       shha1721        00:03:09 R long           
+249000              dict_limit       shha1721        00:03:09 R long           
+249001              dict_limit       shha1721        00:03:09 R long           
+249002              dict_limit       shha1721        00:03:09 R long           
+249003              dict_limit       shha1721        00:03:09 R long           
+249004              dict_limit       shha1721        00:03:09 R long           
+249005              dict_limit       shha1721        00:03:09 R long           
+249006              dict_limit       shha1721        00:03:09 R long           
+249007              dict_limit       shha1721        00:03:09 R long           
+249008              dict_limit       shha1721        00:03:09 R long           
+249009              dict_limit       shha1721        00:03:09 R long           
+249010              dict_limit       shha1721        00:03:09 R long           
+249011              dict_limit       shha1721        00:03:09 R long           
+249012              dict_limit       shha1721        00:03:09 R long           
+249013              dict_limit       shha1721        00:03:09 R long           
+249014              dict_limit       shha1721        00:03:09 R long           
+249015              dict_limit       shha1721        00:03:09 R long           
+249016              dict_limit       shha1721        00:03:09 R long           
+249017              dict_limit       shha1721        00:03:09 R long           
+249018              dict_limit       shha1721        00:03:09 R long           
+249019              dict_limit       shha1721        00:03:09 R long           
+249020              dict_limit       shha1721        00:03:09 R long           
+249021              dict_limit       shha1721        00:03:09 R long           
+249022              dict_limit       shha1721        00:03:09 R long           
+249023              dict_limit       shha1721        00:03:09 R long           
+249024              dict_limit       shha1721        00:03:09 R long           
+249025              dict_limit       shha1721        00:03:09 R long           
+249026              dict_limit       shha1721        00:03:09 R long           
+249027              dict_limit       shha1721        00:03:09 R long           
+249028              dict_limit       shha1721        00:03:09 R long           
+249029              dict_limit       shha1721        00:03:09 R long           
+249030              dict_limit       shha1721        00:03:09 R long           
+249031              dict_limit       shha1721        00:03:09 R long           
+249032              dict_limit       shha1721        00:03:09 R long           
+249033              dict_limit       shha1721        00:03:09 R long           
+249034              dict_limit       shha1721        00:03:09 R long           
+249035              dict_limit       shha1721        00:03:09 R long           
+249036              dict_limit       shha1721        00:03:09 R long           
+249037              dict_limit       shha1721        00:03:09 R long           
+249038              dict_limit       shha1721        00:03:09 R long           
+249039              dict_limit       shha1721        00:03:09 R long           
+249040              dict_limit       shha1721        00:03:09 R long           
+249041              dict_limit       shha1721        00:03:09 R long           
+249042              dict_limit       shha1721        00:03:09 R long           
+249043              dict_limit       shha1721        00:03:09 R long           
+249044              dict_limit       shha1721        00:03:09 R long           
+249045              dict_limit       shha1721        00:03:09 R long           
+249046              dict_limit       shha1721        00:03:09 R long           
+249047              dict_limit       shha1721        00:03:09 R long           
+249048              dict_limit       shha1721        00:03:09 R long           
+249049              dict_limit       shha1721        00:03:09 R long           
+249050              dict_limit       shha1721        00:03:09 R long           
+249051              dict_limit       shha1721        00:03:09 R long           
+249052              dict_limit       shha1721        00:03:09 R long           
+249053              dict_limit       shha1721        00:03:09 R long           
+249054              dict_limit       shha1721        00:03:09 R long           
+249055              dict_limit       shha1721        00:03:09 R long           
+249056              dict_limit       shha1721        00:03:09 R long           
+249057              dict_limit       shha1721        00:03:09 R long           
+249058              dict_limit       shha1721        00:03:09 R long           
+249059              dict_limit       shha1721        00:03:09 R long           
+249060              dict_limit       shha1721        00:03:09 R long           
+249061              dict_limit       shha1721        00:03:09 R long           
+249062              dict_limit       shha1721        00:03:09 R long           
+249063              dict_limit       shha1721        00:03:09 R long           
+249064              dict_limit       shha1721        00:03:09 R long           
+249065              dict_limit       shha1721        00:03:09 R long           
+249066              dict_limit_voc   shha1721        00:03:09 R long           
+249067              dict_limit_voc   shha1721        00:03:09 R long           
+249068              dict_limit_voc   shha1721        00:03:09 R long           
+249069              dict_limit_voc   shha1721        00:03:09 R long           
+249070              dict_limit_voc   shha1721        00:03:09 R long           
+249071              dict_limit_voc   shha1721        00:03:09 R long           
+249072              dict_limit_voc   shha1721        00:03:09 R long           
+249073              dict_limit_voc   shha1721        00:03:09 R long           
+249074              dict_limit_voc   shha1721        00:03:09 R long           
+249075              dict_limit_voc   shha1721        00:03:09 R long           
+249076              dict_limit_voc   shha1721        00:03:09 R long           
+249077              dict_limit_voc   shha1721        00:03:09 R long           
+249078              dict_limit_voc   shha1721        00:03:09 R long           
+249079              dict_limit_voc   shha1721        00:03:09 R long           
+249080              dict_limit_voc   shha1721        00:03:09 R long           
+249081              dict_limit_voc   shha1721        00:03:09 R long           
+249082              dict_limit_voc   shha1721        00:03:09 R long           
+249083              dict_limit_voc   shha1721        00:03:09 R long           
+249084              dict_limit_voc   shha1721        00:03:09 R long           
+249085              dict_limit_voc   shha1721        00:03:09 R long           
+249086              dict_limit_voc   shha1721        00:03:09 R long           
+249087              dict_limit_voc   shha1721        00:03:09 R long           
+249088              dict_limit_voc   shha1721        00:03:09 R long           
+249089              dict_limit_voc   shha1721        00:03:09 R long           
+249090              dict_limit_voc   shha1721        00:03:09 R long           
+249091              dict_limit_voc   shha1721        00:03:09 R long           
+249092              dict_limit_voc   shha1721        00:03:09 R long           
+249093              dict_limit_voc   shha1721        00:03:09 R long           
+249094              dict_limit_voc   shha1721        00:03:09 R long           
+249095              dict_limit_voc   shha1721        00:03:09 R long           
+249096              dict_limit_voc   shha1721        00:03:09 R long           
+249097              dict_limit_voc   shha1721        00:03:09 R long           
+249098              dict_limit_voc   shha1721        00:03:09 R long           
+249099              dict_limit_voc   shha1721        00:03:09 R long           
+249100              dict_limit_voc   shha1721        00:03:09 R long           
+249101              dict_limit_voc   shha1721        00:03:09 R long           
+249102              dict_limit_voc   shha1721        00:03:09 R long           
+249103              dict_limit_voc   shha1721        00:03:09 R long           
+249104              dict_limit_voc   shha1721        00:03:09 R long           
+249105              dict_limit_voc   shha1721        00:03:09 R long           
+249106              dict_limit_voc   shha1721        00:03:09 R long           
+249107              dict_limit_voc   shha1721        00:03:09 R long           
+249108              dict_limit_voc   shha1721        00:03:09 R long           
+249109              dict_limit_voc   shha1721        00:03:09 R long           
+249110              dict_limit_voc   shha1721        00:03:09 R long           
+249111              dict_limit_voc   shha1721        00:03:09 R long           
+249112              dict_limit_voc   shha1721        00:03:09 R long           
+249113              dict_limit_voc   shha1721        00:03:09 R long           
+249114              dict_limit_voc   shha1721        00:03:09 R long           
+249115              dict_limit_voc   shha1721        00:03:09 R long           
+249116              dict_limit_voc   shha1721        00:03:09 R long           
+249117              dict_limit_voc   shha1721        00:03:09 R long           
+249118              dict_limit_voc   shha1721        00:03:09 R long           
+249119              dict_limit_voc   shha1721        00:03:09 R long           
+249120              dict_limit_voc   shha1721        00:03:09 R long           
+249121              dict_limit_voc   shha1721        00:03:09 R long           
+249122              dict_limit_voc   shha1721        00:03:09 R long           
+249123              dict_limit_voc   shha1721        00:03:09 R long           
+249124              dict_limit_voc   shha1721        00:03:09 R long           
+249125              dict_limit_voc   shha1721        00:03:09 R long           
+249126              dict_limit_voc   shha1721        00:03:09 R long           
+249127              dict_limit_voc   shha1721        00:03:09 R long           
+249128              dict_limit_voc   shha1721        00:03:09 R long           
+249129              dict_limit_voc   shha1721        00:03:09 R long           
+249130              dict_limit_voc   shha1721        00:03:09 R long           
+249131              dict_limit_voc   shha1721        00:03:09 R long           
+249132              dict_limit_voc   shha1721        00:03:09 R long           
+249133              dict_limit_voc   shha1721        00:03:09 R long           
+249134              dict_limit_voc   shha1721        00:03:09 R long           
+249135              dict_limit_voc   shha1721        00:03:09 R long           
+249136              dict_limit_voc   shha1721        00:03:09 R long           
+249137              dict_limit_voc   shha1721        00:03:09 R long           
+249145              BEE_FASTQC       ding1018        00:00:00 Q short          
+249146              BEE_FASTQC       ding1018        00:00:00 Q short          
+249155              array-a          hynesgra        00:00:29 R long           
+249156              ERS_FASTQC       ersc5969        00:00:02 C short          
+249157              ERS_FASTQC       ersc5969        00:00:02 C short          
+249158              ERS_FASTQC2      ersc5969        00:00:02 C short          
+249159              ERS_FASTQC2      ersc5969        00:00:02 C short          
+249160              ERS_FASTQC3      ersc5969        00:00:05 R short          
+249161              ERS_FASTQC3      ersc5969        00:00:05 R short          
+249162              ERS_FASTQC4      ersc5969        00:00:05 R short          
+249163              ERS_FASTQC4      ersc5969        00:00:05 R short          
+249164              ERS_FASTQC5      ersc5969        00:00:02 C short          
+249165              ERS_FASTQC5      ersc5969        00:00:02 C short          
+249166              ERS_FASTQC6      ersc5969        00:00:02 C short          
+249167              ERS_FASTQC6      ersc5969        00:00:02 C short          
+-bash-4.2$ ls
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+eofiles  get_FASTQC.slurm  get_SRR.slurm  qual  SRR4045881.fastq  test.py  test.sh
+-bash-4.2$ nano get_FASTQC.slurm 
+-bash-4.2$ nano get_FASTQC.slurm 
+-bash-4.2$ bash get_FASTQC.slurm 
+/Users/ding1018/bee_brain
+fiji-1.colorado.edu
+Mon Mar 12 21:15:31 MDT 2018
+Mon Mar 12 21:15:31 MDT 2018
+Specified output directory '/Users/ding1018/bee_brain/SRR4045881.fastqc' does not exist
+qual
+Mon Mar 12 21:15:31 MDT 2018
+-bash-4.2$ nano get_FASTQC.slurm 
+-bash-4.2$ bash get_FASTQC.slurm 
+/Users/ding1018/bee_brain
+fiji-1.colorado.edu
+Mon Mar 12 21:16:03 MDT 2018
+Mon Mar 12 21:16:03 MDT 2018
+Started analysis of SRR4045881.fastq
+Approx 5% complete for SRR4045881.fastq
+Approx 10% complete for SRR4045881.fastq
+Approx 15% complete for SRR4045881.fastq
+Approx 20% complete for SRR4045881.fastq
+Approx 25% complete for SRR4045881.fastq
+Approx 30% complete for SRR4045881.fastq
+Approx 35% complete for SRR4045881.fastq
+Approx 40% complete for SRR4045881.fastq
+Approx 45% complete for SRR4045881.fastq
+Approx 50% complete for SRR4045881.fastq
+Approx 55% complete for SRR4045881.fastq
+Approx 60% complete for SRR4045881.fastq
+Approx 65% complete for SRR4045881.fastq
+Approx 70% complete for SRR4045881.fastq
+Approx 75% complete for SRR4045881.fastq
+Approx 80% complete for SRR4045881.fastq
+Approx 85% complete for SRR4045881.fastq
+Approx 90% complete for SRR4045881.fastq
+Approx 95% complete for SRR4045881.fastq
+Analysis complete for SRR4045881.fastq
+qual
+Mon Mar 12 21:16:46 MDT 2018
+-bash-4.2$ ls
+eofiles           get_SRR.slurm  SRR4045881.fastq        SRR4045881_fastqc.zip  test.sh
+get_FASTQC.slurm  qual           SRR4045881_fastqc.html  test.py
+-bash-4.2$ pwd
+/Users/dingpwd
+/Users/ding1018/bee_brain
+-bash-4.2$ logout
+Connection to fiji.colorado.edu closed.
+cu-vpn-colorado-edu-198:~ dieumynguyen$ scp ding1018@fiji.colorado.edu:/Users/ding1018/bee_brain/SRR4045881_fastqc.html /Users/dieumynguyen/desktop
+ding1018@fiji.colorado.edu's password: 
+SRR4045881_fastqc.html                                                                 100%  303KB 609.4KB/s   00:00    
+cu-vpn-colorado-edu-198:~ dieumynguyen$ ssh ding1018@fiji.colorado.edu
+ding1018@fiji.colorado.edu's password: 
+Last login: Mon Mar 12 21:08:51 2018 from cu-vpn-colorado-edu-198.11.31.201.int.colorado.edu
++-----------------------------------------------------------------------------+
+|                   *****Warning Notice*****                                  |
+|This system is restricted solely to University of Colorado authorized users  |
+|for legitimate business purposes only.  The actual of attempted unauthorized |
+|access, use or modification of this system is strictly prohibited by the     |
+|University of Colorado.                                                      |
+|The use of this system is monitored and recorded for administrative and      |
+|security reasons.  Anyone accessing this system expressly consents to such   |
+|monitoring and is advised that is such monitoring reveals possible evidence  |
+|of criminal activity, University officals may provide evidence of such       |
+|activity to law enforcement officials.  All users must comply with the       |
+|University of Colorado security instructions regarding the protection of the |
+|University of Colorado's information.                                        |
+|                                                                             |
+|Cluster usage information is available at the BioFrontiers Core page --      |
+|http://bficores.colorado.edu/biofrontiers-it/cluster-computing/              |
+|                                                                             |
+|For assistance, please submit a ticket to our ticketing system --            |
+|bf-rscrh@colorado.edu .                                                      |
+|                                                                             |
++-----------------------------------------------------------------------------+
+
+-bash-4.2$ 

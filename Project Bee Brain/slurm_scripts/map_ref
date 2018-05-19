@@ -1,0 +1,621 @@
+Last login: Thu Mar 15 21:33:00 on ttys000
+Hello, Dieu My!
+cu-biot-7-10:~ dieumynguyen$ ssh ding1018@fiji.colorado.edu
+ding1018@fiji.colorado.edu's password: 
+Last login: Wed Mar 14 14:52:06 2018 from cu-biot-7-10.203.152.189.int.colorado.edu
++-----------------------------------------------------------------------------+
+|                   *****Warning Notice*****                                  |
+|This system is restricted solely to University of Colorado authorized users  |
+|for legitimate business purposes only.  The actual of attempted unauthorized |
+|access, use or modification of this system is strictly prohibited by the     |
+|University of Colorado.                                                      |
+|The use of this system is monitored and recorded for administrative and      |
+|security reasons.  Anyone accessing this system expressly consents to such   |
+|monitoring and is advised that is such monitoring reveals possible evidence  |
+|of criminal activity, University officals may provide evidence of such       |
+|activity to law enforcement officials.  All users must comply with the       |
+|University of Colorado security instructions regarding the protection of the |
+|University of Colorado's information.                                        |
+|                                                                             |
+|Cluster usage information is available at the BioFrontiers Core page --      |
+|http://bficores.colorado.edu/biofrontiers-it/cluster-computing/              |
+|                                                                             |
+|For assistance, please submit a ticket to our ticketing system --            |
+|bf-rscrh@colorado.edu .                                                      |
+|                                                                             |
++-----------------------------------------------------------------------------+
+
+-bash-4.2$ cd /scratch/Shares/public/genomes/
+-bash-4.2$ ls
+Arabidopsis_thaliana
+Arabidopsis_thaliana_NCBI_TAIR10.tar.gz
+bedtools_genome_files
+Caenorhabditis_elegans
+Caenorhabditis_elegans_UCSC_ce10.tar.gz
+downloadmaingenomes.sh
+Drosophila_melanogaster
+Drosophila_melanogaster_UCSC_dm6.tar.gz
+Homo_sapiens
+Homo_sapiens_NCBI_GRCh38.tar.gz
+Homo_sapiens_UCSC_hg19.tar.gz
+Homo_sapiens_UCSC_hg38.tar.gz
+Mus_musculus
+Mus_musculus_UCSC_mm10.tar.gz
+Pan_troglodytes_UCSC_panTro4.tar.gz
+Rattus_norvegicus
+Rattus_norvegicus_UCSC_rn6.tar.gz
+README.txt
+reindexgenome.sh
+rheMac3.chrom.sizes
+rheMac3.fa.gz
+Saccharomyces_cerevisiae
+Saccharomyces_cerevisiae_UCSC_sacCer3.tar.gz
+SEY6210_SGD_2015_JRIW00000000
+Sus_scrofa
+Sus_scrofa_UCSC_susScr3.tar.gz
+unpack.sh
+-bash-4.2$ cd ~
+-bash-4.2$ ls
+47HS  bee_brain  ncbi  perl5  R  testing_things
+-bash-4.2$ cd bee_brain/
+-bash-4.2$ ;s
+-bash: syntax error near unexpected token `;'
+-bash-4.2$ ls
+eofiles  fastqc            get_SRR.slurm
+fastq    get_FASTQC.slurm  ref_genome
+-bash-4.2$ cd ref_genome/
+-bash-4.2$ ls
+GCF_000002195.4_Amel_4.5_genomic.fna
+-bash-4.2$ less GCF_000002195.4_Amel_4.5_genomic.fna 
+-bash-4.2$ 
+-bash-4.2$ cd ..
+-bash-4.2$ nano get_SRR.slurm 
+-bash-4.2$ cp get_SRR.slurm index_ref.slurm
+-bash-4.2$ ls
+eofiles  fastqc            get_SRR.slurm    ref_genome
+fastq    get_FASTQC.slurm  index_ref.slurm
+-bash-4.2$ nano index_ref.slurm 
+-bash-4.2$ ls
+eofiles  fastqc            get_SRR.slurm    ref_genome
+fastq    get_FASTQC.slurm  index_ref.slurm
+-bash-4.2$ cd ref_genome/
+-bash-4.2$ pwd
+/Users/ding1018/bee_brain/ref_genome
+-bash-4.2$ nano index_ref.slurm 
+-bash-4.2$ ls
+GCF_000002195.4_Amel_4.5_genomic.fna
+-bash-4.2$ cd ..
+-bash-4.2$ nano index_ref.slurm 
+-bash-4.2$ sbatch index_ref.slurm 
+Submitted batch job 250151
+-bash-4.2$ qstat
+Job id              Name             Username        Time Use S Queue          
+------------------- ---------------- --------------- -------- - ---------------
+248390              annealing        shha1721        04:11:35 R long           
+248396              annealing        shha1721        04:11:35 R long           
+248414              annealing        shha1721        04:11:35 R long           
+248420              annealing        shha1721        04:11:35 R long           
+249085              dict_limit_voc   shha1721        03:16:16 R long           
+249471              theano_first_try adth9395        00:22:42 R titan          
+250139              prodgb_full_baaa arde8511        00:13:18 R short          
+250146              prodgb_full_lig_ arde8511        00:12:20 R short          
+250147              CUFFlinks_HISAT2 sanchegj        00:02:36 R long           
+250148              CUFFlinks_HISAT2 sanchegj        00:02:35 R long           
+250149              CUFFlinks_HISAT2 sanchegj        00:02:34 R long           
+250150              CUFFlinks_HISAT2 sanchegj        00:02:34 R long           
+250151              BEE_BRAINS       ding1018        00:00:00 C short          
+-bash-4.2$ nano index_ref.slurm 
+-bash-4.2$ pwd
+/Users/ding1018/bee_brain
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  index_ref.slurm  ref_genome
+-bash-4.2$ cd ref_genome/
+-bash-4.2$ ls
+GCF_000002195.4_Amel_4.5_genomic.fna
+-bash-4.2$ cd ..
+-bash-4.2$ cd eofiles/
+-bash-4.2$ ls
+GETSRR249144.err   GET_SRR249170.err  GET_SRR249172.err  GET_SRR249174.err  GET_SRR249176.err  GET_SRR249178.err  GET_SRR249180.err
+GETSRR249144.out   GET_SRR249170.out  GET_SRR249172.out  GET_SRR249174.out  GET_SRR249176.out  GET_SRR249178.out  GET_SRR249180.out
+GET_SRR249169.err  GET_SRR249171.err  GET_SRR249173.err  GET_SRR249175.err  GET_SRR249177.err  GET_SRR249179.err  ref_genome.err
+GET_SRR249169.out  GET_SRR249171.out  GET_SRR249173.out  GET_SRR249175.out  GET_SRR249177.out  GET_SRR249179.out  ref_genome.out
+-bash-4.2$ less ref_genome.err
+-bash-4.2$ 
+-bash-4.2$ ls
+GETSRR249144.err   GET_SRR249170.err  GET_SRR249172.err  GET_SRR249174.err  GET_SRR249176.err  GET_SRR249178.err  GET_SRR249180.err
+GETSRR249144.out   GET_SRR249170.out  GET_SRR249172.out  GET_SRR249174.out  GET_SRR249176.out  GET_SRR249178.out  GET_SRR249180.out
+GET_SRR249169.err  GET_SRR249171.err  GET_SRR249173.err  GET_SRR249175.err  GET_SRR249177.err  GET_SRR249179.err  ref_genome.err
+GET_SRR249169.out  GET_SRR249171.out  GET_SRR249173.out  GET_SRR249175.out  GET_SRR249177.out  GET_SRR249179.out  ref_genome.out
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  index_ref.slurm  ref_genome
+-bash-4.2$ cd ref_genome/
+-bash-4.2$ less GCF_000002195.4_Amel_4.5_genomic.fna 
+-bash-4.2$ ls
+GCF_000002195.4_Amel_4.5_genomic.fna
+-bash-4.2$ cd ..
+-bash-4.2$ nano index_ref.slurm 
+-bash-4.2$ nano index_ref.slurm 
+-bash-4.2$ sbatch index_ref.slurm 
+Submitted batch job 250152
+-bash-4.2$ qstat
+Job id              Name             Username        Time Use S Queue          
+------------------- ---------------- --------------- -------- - ---------------
+248390              annealing        shha1721        04:11:43 R long           
+248396              annealing        shha1721        04:11:43 R long           
+248414              annealing        shha1721        04:11:43 R long           
+248420              annealing        shha1721        04:11:43 R long           
+249085              dict_limit_voc   shha1721        03:16:24 R long           
+249471              theano_first_try adth9395        00:22:50 R titan          
+250139              prodgb_full_baaa arde8511        00:13:26 R short          
+250146              prodgb_full_lig_ arde8511        00:12:27 R short          
+250147              CUFFlinks_HISAT2 sanchegj        00:02:44 R long           
+250148              CUFFlinks_HISAT2 sanchegj        00:02:42 R long           
+250149              CUFFlinks_HISAT2 sanchegj        00:02:41 R long           
+250150              CUFFlinks_HISAT2 sanchegj        00:02:41 R long           
+250152              BEE_BRAINS       ding1018        00:00:00 R short          
+-bash-4.2$ qstat
+Job id              Name             Username        Time Use S Queue          
+------------------- ---------------- --------------- -------- - ---------------
+248390              annealing        shha1721        04:11:44 R long           
+248396              annealing        shha1721        04:11:44 R long           
+248414              annealing        shha1721        04:11:44 R long           
+248420              annealing        shha1721        04:11:44 R long           
+249085              dict_limit_voc   shha1721        03:16:24 R long           
+249471              theano_first_try adth9395        00:22:50 R titan          
+250139              prodgb_full_baaa arde8511        00:13:26 R short          
+250146              prodgb_full_lig_ arde8511        00:12:28 R short          
+250147              CUFFlinks_HISAT2 sanchegj        00:02:45 R long           
+250148              CUFFlinks_HISAT2 sanchegj        00:02:43 R long           
+250149              CUFFlinks_HISAT2 sanchegj        00:02:42 R long           
+250150              CUFFlinks_HISAT2 sanchegj        00:02:42 R long           
+250152              BEE_BRAINS       ding1018        00:00:00 R short          
+-bash-4.2$ qstat
+Job id              Name             Username        Time Use S Queue          
+------------------- ---------------- --------------- -------- - ---------------
+248390              annealing        shha1721        04:11:47 R long           
+248396              annealing        shha1721        04:11:47 R long           
+248414              annealing        shha1721        04:11:47 R long           
+248420              annealing        shha1721        04:11:47 R long           
+249085              dict_limit_voc   shha1721        03:16:28 R long           
+249471              theano_first_try adth9395        00:22:54 R titan          
+250139              prodgb_full_baaa arde8511        00:13:30 R short          
+250146              prodgb_full_lig_ arde8511        00:12:32 R short          
+250147              CUFFlinks_HISAT2 sanchegj        00:02:48 R long           
+250148              CUFFlinks_HISAT2 sanchegj        00:02:47 R long           
+250149              CUFFlinks_HISAT2 sanchegj        00:02:46 R long           
+250150              CUFFlinks_HISAT2 sanchegj        00:02:45 R long           
+250152              BEE_BRAINS       ding1018        00:00:04 R short          
+-bash-4.2$ qstat
+Job id              Name             Username        Time Use S Queue          
+------------------- ---------------- --------------- -------- - ---------------
+248390              annealing        shha1721        04:11:51 R long           
+248396              annealing        shha1721        04:11:51 R long           
+248414              annealing        shha1721        04:11:51 R long           
+248420              annealing        shha1721        04:11:51 R long           
+249085              dict_limit_voc   shha1721        03:16:32 R long           
+249471              theano_first_try adth9395        00:22:58 R titan          
+250139              prodgb_full_baaa arde8511        00:13:34 R short          
+250146              prodgb_full_lig_ arde8511        00:12:36 R short          
+250147              CUFFlinks_HISAT2 sanchegj        00:02:52 R long           
+250148              CUFFlinks_HISAT2 sanchegj        00:02:50 R long           
+250149              CUFFlinks_HISAT2 sanchegj        00:02:50 R long           
+250150              CUFFlinks_HISAT2 sanchegj        00:02:49 R long           
+250152              BEE_BRAINS       ding1018        00:00:04 C short          
+-bash-4.2$ ls
+eofiles  fastqc            get_SRR.slurm    ref_genome        ref_genome.2.bt2  ref_genome.4.bt2      ref_genome.rev.2.bt2
+fastq    get_FASTQC.slurm  index_ref.slurm  ref_genome.1.bt2  ref_genome.3.bt2  ref_genome.rev.1.bt2
+-bash-4.2$ less ref_genome.1.bt2
+"ref_genome.1.bt2" may be a binary file.  See it anyway? 
+-bash-4.2$ less ref_genome.rev.1.bt2
+"ref_genome.rev.1.bt2" may be a binary file.  See it anyway? 
+-bash-4.2$ mkdir INDEX
+-bash-4.2$ cp ref_genome.1.bt2 /INDEX
+cp: cannot create regular file ‘/INDEX’: Permission denied
+-bash-4.2$ mv ref_genome.1.bt2 /INDEX
+mv: cannot create regular file ‘/INDEX’: Permission denied
+-bash-4.2$ ls
+eofiles  fastqc            get_SRR.slurm  index_ref.slurm  ref_genome.1.bt2  ref_genome.3.bt2  ref_genome.rev.1.bt2
+fastq    get_FASTQC.slurm  INDEX          ref_genome       ref_genome.2.bt2  ref_genome.4.bt2  ref_genome.rev.2.bt2
+-bash-4.2$ mv ref_genome.1.bt2 /INDEX/
+mv: cannot create regular file ‘/INDEX/’: Not a directory
+-bash-4.2$ mv ref_genome.1.bt2 INDEX                                INDEX                                                                                     2mv: cannot stat ‘ref_genome.2.bt2+ref_genome.3.bt2+ref_genome.4.bt2’: No such file or directory                                 t INDEX
+-bash-4.2$ stqc            get_SRR.slurm  index_ref.slurm  reb INDEXe.2.bt2  ref_genome.4.bt2      ref_genome.rev.2.bt2
+-bash-4.2$ t_FASTQC.slurm  INDEX          ref_genome       ref_genome.3.bt2  ref_genome.rev.1.bt2                             . INDEX
+-bash-4.2$ mv ref_genome.2.bt2+ref_genome.3.bt2+ref_genome.4 INDEX 
+-bash-4.2$ 
+-bash-4.2$ 
+-bash-4.2$ ls
+eofiles  fastqc            get_SRR.slurm  index_ref.slurm  ref_genome.2.bt2  ref_genome.4.bt2      ref_genome.rev.2.bt2
+fastq    get_FASTQC.slurm  INDEX          ref_genome       ref_genome.3.bt2  ref_genome.rev.1.bt2
+-bash-4.2$ cd INDEX/
+-bash-4.2$ ls
+ref_genome.1.bt2
+-bash-4.2$ cd ..
+-bash-4.2$ mv ref_genome.2.bt2 INDEX/
+-bash-4.2$ mv ref_genome.3.bt2 INDEX/
+-bash-4.2$ mv ref_genome.4.bt2 INDEX/
+-bash-4.2$ mv ref_genome.rev.1.bt2 INDEX/
+-bash-4.2$ mv ref_genome.rev.2.bt2 INDEX/
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  ref_genome
+-bash-4.2$ cd INDEX/
+-bash-4.2$ ls
+ref_genome.1.bt2  ref_genome.2.bt2  ref_genome.3.bt2  ref_genome.4.bt2  ref_genome.rev.1.bt2  ref_genome.rev.2.bt2
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  ref_genome
+-bash-4.2$ cd ref_genome/
+-bash-4.2$ less GCF_000002195.4_Amel_4.5_genomic.fna 
+-bash-4.2$ pwd
+/Users/ding1018/bee_brain/ref_genome
+-bash-4.2$ ls
+GCF_000002195.4_Amel_4.5_genomic.fna
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  ref_genome
+-bash-4.2$ cp index_ref.slurm 
+cp: missing destination file operand after ‘index_ref.slurm’
+Try 'cp --help' for more information.
+-bash-4.2$ cp index_ref.slurm map.slurm
+-bash-4.2$ nano map.slurm 
+-bash-4.2$ pwd
+/Users/ding1018/bee_brain
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome
+-bash-4.2$ cd fastq
+-bash-4.2$ ls
+SRR4045872.fastq  SRR4045874.fastq  SRR4045876.fastq  SRR4045878.fastq  SRR4045880.fastq  SRR4045882.fastq
+SRR4045873.fastq  SRR4045875.fastq  SRR4045877.fastq  SRR4045879.fastq  SRR4045881.fastq  SRR4045883.fastq
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome
+-bash-4.2$ nano map.slurm 
+-bash-4.2$ sbatch map.slurm 
+Submitted batch job 250155
+-bash-4.2$ qstat
+Job id              Name             Username        Time Use S Queue          
+------------------- ---------------- --------------- -------- - ---------------
+248390              annealing        shha1721        04:12:11 C long           
+248396              annealing        shha1721        04:12:15 R long           
+248414              annealing        shha1721        04:12:14 R long           
+248420              annealing        shha1721        04:12:14 R long           
+249085              dict_limit_voc   shha1721        03:16:55 R long           
+249471              theano_first_try adth9395        00:23:21 R titan          
+250139              prodgb_full_baaa arde8511        00:13:57 R short          
+250146              prodgb_full_lig_ arde8511        00:12:59 R short          
+250147              CUFFlinks_HISAT2 sanchegj        00:03:15 R long           
+250148              CUFFlinks_HISAT2 sanchegj        00:03:14 R long           
+250149              CUFFlinks_HISAT2 sanchegj        00:03:13 R long           
+250150              CUFFlinks_HISAT2 sanchegj        00:03:13 R long           
+250154              FEAcounts_HISAT2 sanchegj        00:00:06 R short          
+250155              BEE_BRAINS       ding1018        00:00:00 C short          
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome
+-bash-4.2$ pwd
+/Users/ding1018/bee_brain
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome
+-bash-4.2$ cd fastq
+-bash-4.2$ ls
+SRR4045872.fastq  SRR4045874.fastq  SRR4045876.fastq  SRR4045878.fastq  SRR4045880.fastq  SRR4045882.fastq
+SRR4045873.fastq  SRR4045875.fastq  SRR4045877.fastq  SRR4045879.fastq  SRR4045881.fastq  SRR4045883.fastq
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+47HS  bee_brain  ncbi  perl5  R  testing_things
+-bash-4.2$ cd bee_brain/
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome
+-bash-4.2$ cd INDEX/
+-bash-4.2$ ls
+ref_genome.1.bt2  ref_genome.2.bt2  ref_genome.3.bt2  ref_genome.4.bt2  ref_genome.rev.1.bt2  ref_genome.rev.2.bt2
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome
+-bash-4.2$ nano map.slurm 
+-bash-4.2$ sbatch map.slurm 
+Submitted batch job 250156
+-bash-4.2$ qstat
+Job id              Name             Username        Time Use S Queue          
+------------------- ---------------- --------------- -------- - ---------------
+248396              annealing        shha1721        04:12:17 R long           
+248414              annealing        shha1721        04:12:17 R long           
+248420              annealing        shha1721        04:12:17 R long           
+249085              dict_limit_voc   shha1721        03:16:58 R long           
+249471              theano_first_try adth9395        00:23:24 R titan          
+250139              prodgb_full_baaa arde8511        00:14:00 R short          
+250146              prodgb_full_lig_ arde8511        00:13:02 R short          
+250147              CUFFlinks_HISAT2 sanchegj        00:03:18 R long           
+250148              CUFFlinks_HISAT2 sanchegj        00:03:17 R long           
+250149              CUFFlinks_HISAT2 sanchegj        00:03:16 R long           
+250150              CUFFlinks_HISAT2 sanchegj        00:03:15 R long           
+250154              FEAcounts_HISAT2 sanchegj        00:00:09 R short          
+250155              BEE_BRAINS       ding1018        00:00:00 C short          
+250156              BEE_BRAINS       ding1018        00:00:00 C short          
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome
+-bash-4.2$ nano map.slurm 
+-bash-4.2$ sbatch map.slurm 
+Submitted batch job 250157
+-bash-4.2$ qstat
+Job id              Name             Username        Time Use S Queue          
+------------------- ---------------- --------------- -------- - ---------------
+248396              annealing        shha1721        04:12:18 R long           
+248414              annealing        shha1721        04:12:18 R long           
+248420              annealing        shha1721        04:12:18 R long           
+249085              dict_limit_voc   shha1721        03:16:59 R long           
+249471              theano_first_try adth9395        00:23:25 R titan          
+250139              prodgb_full_baaa arde8511        00:14:01 R short          
+250146              prodgb_full_lig_ arde8511        00:13:02 R short          
+250147              CUFFlinks_HISAT2 sanchegj        00:03:19 R long           
+250148              CUFFlinks_HISAT2 sanchegj        00:03:17 R long           
+250149              CUFFlinks_HISAT2 sanchegj        00:03:16 R long           
+250150              CUFFlinks_HISAT2 sanchegj        00:03:16 R long           
+250154              FEAcounts_HISAT2 sanchegj        00:00:09 R short          
+250155              BEE_BRAINS       ding1018        00:00:00 C short          
+250156              BEE_BRAINS       ding1018        00:00:00 C short          
+250157              BEE_BRAINS       ding1018        00:00:00 C short          
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome
+-bash-4.2$ cd eofiles/
+-bash-4.2$ ls
+GETSRR249144.err   GET_SRR249170.err  GET_SRR249172.err  GET_SRR249174.err  GET_SRR249176.err  GET_SRR249178.err  GET_SRR249180.err
+GETSRR249144.out   GET_SRR249170.out  GET_SRR249172.out  GET_SRR249174.out  GET_SRR249176.out  GET_SRR249178.out  GET_SRR249180.out
+GET_SRR249169.err  GET_SRR249171.err  GET_SRR249173.err  GET_SRR249175.err  GET_SRR249177.err  GET_SRR249179.err  ref_genome.err
+GET_SRR249169.out  GET_SRR249171.out  GET_SRR249173.out  GET_SRR249175.out  GET_SRR249177.out  GET_SRR249179.out  ref_genome.out
+-bash-4.2$ less ref_genome.
+ref_genome.: No such file or directory
+-bash-4.2$ less ref_genome.err
+-bash-4.2$ ls
+GETSRR249144.err   GET_SRR249170.err  GET_SRR249172.err  GET_SRR249174.err  GET_SRR249176.err  GET_SRR249178.err  GET_SRR249180.err
+GETSRR249144.out   GET_SRR249170.out  GET_SRR249172.out  GET_SRR249174.out  GET_SRR249176.out  GET_SRR249178.out  GET_SRR249180.out
+GET_SRR249169.err  GET_SRR249171.err  GET_SRR249173.err  GET_SRR249175.err  GET_SRR249177.err  GET_SRR249179.err  ref_genome.err
+GET_SRR249169.out  GET_SRR249171.out  GET_SRR249173.out  GET_SRR249175.out  GET_SRR249177.out  GET_SRR249179.out  ref_genome.out
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome  SRR4045880.sam
+-bash-4.2$ cd INDEX/
+-bash-4.2$ ls
+ref_genome.1.bt2  ref_genome.2.bt2  ref_genome.3.bt2  ref_genome.4.bt2  ref_genome.rev.1.bt2  ref_genome.rev.2.bt2
+-bash-4.2$ pwd
+/Users/ding1018/bee_brain/INDEX
+-bash-4.2$ cd ..
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome  SRR4045880.sam
+-bash-4.2$ cd eofiles/
+-bash-4.2$ less SRR4045880.sam
+SRR4045880.sam: No such file or directory
+-bash-4.2$ cd ..
+-bash-4.2$ less SRR4045880.sam
+-bash-4.2$ qstat
+Job id              Name             Username        Time Use S Queue          
+------------------- ---------------- --------------- -------- - ---------------
+248396              annealing        shha1721        04:12:26 R long           
+248414              annealing        shha1721        04:12:26 R long           
+248420              annealing        shha1721        04:12:26 R long           
+249085              dict_limit_voc   shha1721        03:17:07 R long           
+249471              theano_first_try adth9395        00:23:33 R titan          
+250139              prodgb_full_baaa arde8511        00:14:09 R short          
+250146              prodgb_full_lig_ arde8511        00:13:11 R short          
+250147              CUFFlinks_HISAT2 sanchegj        00:03:27 R long           
+250148              CUFFlinks_HISAT2 sanchegj        00:03:26 R long           
+250149              CUFFlinks_HISAT2 sanchegj        00:03:25 R long           
+250150              CUFFlinks_HISAT2 sanchegj        00:03:24 R long           
+250154              FEAcounts_HISAT2 sanchegj        00:00:18 R short          
+-bash-4.2$ more SRR4045880.sam
+-bash-4.2$ module avail samtools
+
+--------------------------------------------------------------------- /opt/lmod/lmod/modulefiles/Core ----------------------------------------------------------------------
+   samtools/1.3.1
+
+Use "module spider" to find all possible modules.
+Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+
+-bash-4.2$ module load samtools/1.3.1
+-bash-4.2$ samtools view SRR4045880.sam
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome  SRR4045880.sam
+-bash-4.2$ pwd
+/Users/ding1018/bee_brain
+-bash-4.2$ samtools view -bS -o /Users/ding1018/bee_brain/SRR4045880.bam Users/ding1018/bee_brain/SRR4045880.sam
+[E::hts_open_format] fail to open file 'Users/ding1018/bee_brain/SRR4045880.sam'
+samtools view: failed to open "Users/ding1018/bee_brain/SRR4045880.sam" for reading: No such file or directory
+-bash-4.2$ samtools view -bS -o /Users/ding1018/bee_brain/SRR4045880.bam /Users/ding1018/bee_brain/SRR4045880.sam
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome  SRR4045880.bam  SRR4045880.sam
+-bash-4.2$ samtools sort /Users/ding1018/bee_brain/SRR4045880.bam /Users/ding1018/bee_brain/SRR4045880.sorted
+[bam_sort] Use -T PREFIX / -o FILE to specify temporary and final output files
+Usage: samtools sort [options...] [in.bam]
+Options:
+  -l INT     Set compression level, from 0 (uncompressed) to 9 (best)
+  -m INT     Set maximum memory per thread; suffix K/M/G recognized [768M]
+  -n         Sort by read name
+  -o FILE    Write final output to FILE rather than standard output
+  -T PREFIX  Write temporary files to PREFIX.nnnn.bam
+  -@, --threads INT
+             Set number of sorting and compression threads [1]
+      --input-fmt-option OPT[=VAL]
+               Specify a single input file format option in the form
+               of OPTION or OPTION=VALUE
+  -O, --output-fmt FORMAT[,OPT[=VAL]]...
+               Specify output format (SAM, BAM, CRAM)
+      --output-fmt-option OPT[=VAL]
+               Specify a single output file format option in the form
+               of OPTION or OPTION=VALUE
+      --reference FILE
+               Reference sequence FASTA FILE [null]
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome  SRR4045880.bam  SRR4045880.sam
+-bash-4.2$ samtools sort /Users/ding1018/bee_brain/SRR4045880.bam -o /Users/ding1018/bee_brain/SRR4045880.sorted
+-bash-4.2$ ls
+eofiles  fastq  fastqc  get_FASTQC.slurm  get_SRR.slurm  INDEX  index_ref.slurm  map.slurm  ref_genome  SRR4045880.bam  SRR4045880.sam  SRR4045880.sorted
+-bash-4.2$ samtools view SRR4045880.sorted
+-bash-4.2$ samtools view SRR4045880.sorted | head
+-bash-4.2$ samtools index SRR4045880.sorted.bam
+[E::hts_open_format] fail to open file 'SRR4045880.sorted.bam'
+samtools index: failed to open "SRR4045880.sorted.bam": No such file or directory
+-bash-4.2$ samtools sort /Users/ding1018/bee_brain/SRR4045880.bam -o /Users/ding1018/bee_brain/SRR4045880.sorted.bam
+-bash-4.2$ ls
+eofiles           get_SRR.slurm    ref_genome         SRR4045880.sorted.bam
+fastq             INDEX            SRR4045880.bam
+fastqc            index_ref.slurm  SRR4045880.sam
+get_FASTQC.slurm  map.slurm        SRR4045880.sorted
+-bash-4.2$ samtools view SRR4045880.sorted.bam
+-bash-4.2$ samtools view SRR4045880.sorted.bam | head
+-bash-4.2$ samtools index SRR4045880.sorted.bam
+-bash-4.2$ ls
+eofiles           INDEX            SRR4045880.sam
+fastq             index_ref.slurm  SRR4045880.sorted
+fastqc            map.slurm        SRR4045880.sorted.bam
+get_FASTQC.slurm  ref_genome       SRR4045880.sorted.bam.bai
+get_SRR.slurm     SRR4045880.bam
+-bash-4.2$ logout
+Connection to fiji.colorado.edu closed.
+cu-biot-7-10:~ dieumynguyen$ scp ding1018@fiji.colorado.edu:/Users/ding1018/bee_brain/SRR4045880.bam /Users/dieumynguyen/Desktop
+ding1018@fiji.colorado.edu's password: 
+SRR4045880.bam                            100%   62    17.7KB/s   00:00    
+cu-biot-7-10:~ dieumynguyen$ scp ding1018@fiji.colorado.edu:/Users/ding1018/bee_brain/SRR4045880.sorted.bam.bai /Users/dieumynguyen/Desktop
+ding1018@fiji.colorado.edu's password: 
+SRR4045880.sorted.bam.bai                 100%   16     4.9KB/s   00:00    
+cu-biot-7-10:~ dieumynguyen$ ls
+1c2.png
+47hs
+Applications
+Calibre Library
+Creative Cloud Files
+Desktop
+Documents
+Downloads
+Dropbox
+Dropbox (BYB papers)
+Dropbox (Old)
+HMM-Copy1.ipynb
+HMM-Copy2.ipynb
+HMM.ipynb
+HW3.R
+Library
+MEGA
+Movies
+Music
+OUTPUT.0000.nc
+Pictures
+Public
+Scripts
+Test.java
+Untitled.ipynb
+Untitled1.ipynb
+Untitled2.ipynb
+Wine Files
+anaconda3
+dc8_network.svg
+dieumynguyen@email.arizona.edu Creative Cloud Files
+female_age.png
+grasshopper abstract.txt
+hw4.Rmd
+hw4.html
+ibt_application.log
+ibtsa.log
+male_age.png
+matlab_crash_dump.10198-1
+matlab_crash_dump.13176-1
+matlab_crash_dump.19923-1
+matlab_crash_dump.47354-1
+matlab_crash_dump.7788-1
+miniconda3
+my_data.pickle
+nodes.csv
+oasys.log
+pmf.R
+py3_kernel
+q.log
+rodeo.log
+seaborn-data
+sinwave.png
+socnetv-data
+summary.txt
+testing
+titanic-separation-gam.png
+titanic-separation-glm.png
+titanic-survival-gam.png
+titanic-survival-glm.png
+untitled.txt
+cu-biot-7-10:~ dieumynguyen$ ssh ding1018@fiji.colorado
+ssh: Could not resolve hostname fiji.colorado: nodename nor servname provided, or not known
+cu-biot-7-10:~ dieumynguyen$ ssh ding1018@fiji.colorado.edu
+ding1018@fiji.colorado.edu's password: 
+Last login: Thu Mar 15 12:25:20 2018 from cu-vpn-colorado-edu-198.11.29.162.int.colorado.edu
++-----------------------------------------------------------------------------+
+|                   *****Warning Notice*****                                  |
+|This system is restricted solely to University of Colorado authorized users  |
+|for legitimate business purposes only.  The actual of attempted unauthorized |
+|access, use or modification of this system is strictly prohibited by the     |
+|University of Colorado.                                                      |
+|The use of this system is monitored and recorded for administrative and      |
+|security reasons.  Anyone accessing this system expressly consents to such   |
+|monitoring and is advised that is such monitoring reveals possible evidence  |
+|of criminal activity, University officals may provide evidence of such       |
+|activity to law enforcement officials.  All users must comply with the       |
+|University of Colorado security instructions regarding the protection of the |
+|University of Colorado's information.                                        |
+|                                                                             |
+|Cluster usage information is available at the BioFrontiers Core page --      |
+|http://bficores.colorado.edu/biofrontiers-it/cluster-computing/              |
+|                                                                             |
+|For assistance, please submit a ticket to our ticketing system --            |
+|bf-rscrh@colorado.edu .                                                      |
+|                                                                             |
++-----------------------------------------------------------------------------+
+
+-bash-4.2$ ls
+47HS  bee_brain  ncbi  perl5  R  testing_things
+-bash-4.2$ cd bee_brain/
+-bash-4.2$ ls
+eofiles           INDEX            SRR4045880.sam
+fastq             index_ref.slurm  SRR4045880.sorted
+fastqc            map.slurm        SRR4045880.sorted.bam
+get_FASTQC.slurm  ref_genome       SRR4045880.sorted.bam.bai
+get_SRR.slurm     SRR4045880.bam
+-bash-4.2$ nano index_ref.slurm
+-bash-4.2$ ls
+eofiles           get_SRR.slurm    ref_genome         SRR4045880.sorted.bam
+fastq             INDEX            SRR4045880.bam     SRR4045880.sorted.bam.bai
+fastqc            index_ref.slurm  SRR4045880.sam
+get_FASTQC.slurm  map.slurm        SRR4045880.sorted
+-bash-4.2$ pwd
+/Users/ding1018/bee_brain
+-bash-4.2$ igvtools
+-bash: igvtools: command not found
+-bash-4.2$ module load igv
+-bash-4.2$ igvtools
+-bash: igvtools: command not found
+-bash-4.2$ module load igvtools
+-bash-4.2$ igvtools
+
+Program: igvtools. IGV Version 2.3.75 (95)05/31/2016 03:23 PM
+
+Usage: igvtools [command] [options] [input file/dir] [other arguments]
+
+Command: version print the version number
+	 sort    sort an alignment file by start position. 
+	 index   index an alignment file
+	 toTDF    convert an input file (cn, gct, wig) to tiled data format (tdf)
+	 count   compute coverage density for an alignment file
+	 formatexp  center, scale, and log2 normalize an expression file
+	 gui      Start the gui
+	 help <command>     display this help message, or help on a specific command
+	 See http://www.broadinstitute.org/software/igv/igvtools_commandline for more detailed help
+	
+Error: No arguments provided
+Done
+-bash-4.2$ igvtools index SRR4045880.sorted.bam
+Done
+-bash-4.2$ ls -al | grep SRR4045880
+-rw-r--r--  1 ding1018 iqbio2017  62 Mar 16 11:14 SRR4045880.bam
+-rw-r--r--  1 ding1018 iqbio2017   0 Mar 16 10:59 SRR4045880.sam
+-rw-r--r--  1 ding1018 iqbio2017  92 Mar 16 11:19 SRR4045880.sorted
+-rw-r--r--  1 ding1018 iqbio2017  92 Mar 16 11:22 SRR4045880.sorted.bam
+-rw-r--r--  1 ding1018 iqbio2017  16 Mar 16 12:11 SRR4045880.sorted.bam.bai
+-bash-4.2$ 

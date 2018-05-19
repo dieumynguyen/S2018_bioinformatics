@@ -1,0 +1,235 @@
+Dieu My Nguyen
+Bioinformatics Project Bee Brains
+Spring 2018
+
+############################ FETCH DATA & QUALITY CONTROL ######################
+
+List of SRR's from GEO to use for analysis. Each SRR needs a slurm script to
+fetch the SRR dataset from GEO (download fastq file) and a slurm script to run
+FASTQC on the fastq file (outputting fastqc html file)
+
+Dataset:
+Experiment (X): 30m, 120m (each has 3 SRRs)
+Control (C): 30m, 120m (each has 3 SRRs)
+
+------------------------- 3/12/2018 FASTQ-DUMP SLURM SCRIPTS ------------------------------
+
+%%%%%%%%%%%%% FETCH SRR FROM GEO -> GET FASTQ %%%%%%%%%%%%%
+#!/bin/bash
+#SBATCH --job-name=BEE_BRAINS # Job name
+#SBATCH --mail-type=NONE # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=ding1018@colorado.edu # Where to send mail
+#SBATCH --nodes=1  # Number of distinct nodes requested
+#SBATCH --ntasks=1 # Number of CPU (processer cores i.e. tasks)
+#SBATCH --time=04:00:00 # Time limit hrs:min:sec
+#SBATCH -p short
+#SBATCH --mem=8gb # Memory limit
+#SBATCH --output=/Users/ding1018/bee_brain/eofiles/GET_SRR%j.out
+#SBATCH --error=/Users/ding1018/bee_brain/eofiles/GET_SRR%j.err
+
+P=/Users/ding1018/bee_brain/fastq
+S=SRR4045881
+
+pwd; hostname; date
+date
+module load sra/2.8.0
+fastq-dump -O $P -split-3 $S
+echo download
+date
+
+%%%%%%%%%%%%% RUN FASTQC ON FASTQ'S %%%%%%%%%%%%%
+
+#!/bin/bash
+#SBATCH --job-name=BEE_FASTQC # Job name
+#SBATCH --mail-type=END # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=ding1018@colorado.edu# Where to send mail
+#SBATCH --nodes=1  # Number of distinct nodes requested
+#SBATCH --ntasks=32 # Number of CPU (processer cores i.e. tasks)
+#SBATCH --time=48:00:00 # Time limit hrs:min:sec
+#SBATCH -p short
+#SBATCH --mem=200gb # Memory limit
+#SBATCH --output=/Users/ding1018/bee_brain/eofiles/FASTQC_SRR.out
+#SBATCH --error=/Users/ding1018/bee_brain/eofiles/FASTQC_SRR.err
+
+pwd; hostname; date
+date
+module load fastqc/0.11.5
+fastqc /Users/ding1018/bee_brain/fastq/SRR4045881.fastq -o /Users/ding1018/bee_brain/fastqc/SRR4045881_QC
+echo qual
+date
+
+----------------------------------- CHIP DATA --------------------------------
+
+GSM2286633: R46_IA_X_30m_h3k27ac; Apis mellifera; ChIP-Seq
+Run	# of Spots	# of Bases	Size	Published
+SRR4045881	7,338,824	733.9M	349.2Mb	2017-03-31
+SRR4045882	8,769,600	877M	418.3Mb	2017-03-31
+SRR4045883	8,281,646	828.2M	387.6Mb	2017-03-31
+
+For analysis: SRR4045881 (all 3 have similar fastqc results)
+_________________________________________________________
+
+GSM2286632: R46_IA_X_120m_h3k27ac; Apis mellifera; ChIP-Seq
+Run	# of Spots	# of Bases	Size	Published
+SRR4045878	8,856,692	885.7M	423.7Mb	2017-03-31
+SRR4045879	8,492,597	849.3M	404.6Mb	2017-03-31
+SRR4045880	8,837,392	883.7M	419.4Mb	2017-03-31
+
+For analysis: SRR4045880 (best fastqc results)
+_________________________________________________________
+
+GSM2286631: R46_IA_C_30m_h3k27ac; Apis mellifera; ChIP-Seq
+Run	# of Spots	# of Bases	Size	Published
+SRR4045875	7,398,904	739.9M	350.5Mb	2017-03-31
+SRR4045876	8,723,736	872.4M	415Mb	2017-03-31
+SRR4045877	8,673,589	867.4M	406.2Mb	2017-03-31
+
+For analysis: SRR4045877 (best fastqc results)
+_________________________________________________________
+
+GSM2286630: R46_IA_C_120m_h3k27ac; Apis mellifera; ChIP-Seq
+Run	# of Spots	# of Bases	Size	Published
+SRR4045872	7,243,006	724.3M	346.5Mb	2017-03-31
+SRR4045873	8,097,543	809.8M	385.4Mb	2017-03-31
+SRR4045874	8,091,430	809.1M	379.1Mb	2017-03-31
+
+For analysis: SRR4045874 (best fastqc results)
+
+------------------------- 3/12/2018 FASTQC.HTML's ------------------------------
+Copy fastqc files from fiji to desktop to view in browser:
+
+SRR4045872_fastqc.html: scp ding1018@fiji.colorado.edu:/Users/ding1018/bee_brain/fastqc/SRR4045872_fastqc.html /Users/dieumynguyen/desktop/FASTQC
+SRR4045873_fastqc.html
+SRR4045874_fastqc.html
+
+SRR4045875_fastqc.html: scp ding1018@fiji.colorado.edu:/Users/ding1018/bee_brain/fastqc/SRR4045875_fastqc.html /Users/dieumynguyen/desktop/FASTQC
+SRR4045876_fastqc.html
+SRR4045877_fastqc.html
+
+SRR4045878_fastqc.html: scp ding1018@fiji.colorado.edu:/Users/ding1018/bee_brain/fastqc/SRR4045878_fastqc.html /Users/dieumynguyen/desktop/FASTQC
+SRR4045879_fastqc.html
+SRR4045880_fastqc.html
+
+SRR4045881_fastqc.html: scp ding1018@fiji.colorado.edu:/Users/ding1018/bee_brain/fastqc/SRR4045881_fastqc.html /Users/dieumynguyen/desktop/FASTQC
+SRR4045882_fastqc.html
+SRR4045883_fastqc.html
+
+################################# MAP TO REF GENOME ###############################
+
+Map select fastq files to the honey bee reference genome version 4.5.
+Reference genome retrieved from: https://www.ncbi.nlm.nih.gov/genome?term=apis%20mellifera
+
+------------------------- 04/04/2018 BUILD INDEX & MAP ———————————————
+
+%%%%%%%%%%%%% BUILD INDEX FOR REF GENOME %%%%%%%%%%%%%
+#!/bin/bash
+#SBATCH --job-name=DMN_bowtie_build # Job name
+#SBATCH --mail-type=ALL # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=ding1018@colorado.edu# Where to send mail
+#SBATCH --nodes=1  # Number of distinct nodes requested
+#SBATCH --ntasks=1 # Number of CPU (processer cores i.e. tasks)
+#SBATCH --time=04:00:00 # Time limit hrs:min:sec
+#SBATCH -p short
+#SBATCH --mem=20gb # Memory limit
+#SBATCH --output=/scratch/Shares/dk/bee_brain/build_eofiles/index_EO.%j.out
+#SBATCH --error=/scratch/Shares/dk/bee_brain/build_eofiles/index_EO.%j.err
+
+pwd; hostname; date
+date
+module load bowtie/2.2.9
+
+GENOME=/scratch/Shares/dk/bee_brain/ref_genome
+
+
+bowtie2-build -f $GENOME/GCF_000002195.4_Amel_4.5_genomic.fna $GENOME
+
+echo qual
+date
+
+%%%%%%%%%%%%% MAP WITH BOWTIE2, SAM->BAM->SORT %%%%%%%%%%%%%
+
+#!/bin/bash
+#SBATCH --job-name=DMN_bowtie2_map # Job name
+#SBATCH --mail-type=ALL # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=ding1018@colorado.edu # Where to send mail
+#SBATCH --nodes=1 # Run on a single node
+#SBATCH --ntasks=10     # Number of CPU (processer cores i.e. tasks)
+#SBATCH --mem=5gb # Memory limit
+#SBATCH --time=01:00:00 # Time limit hrs:min:sec
+#SBATCH --output=/scratch/Shares/dk/bee_brain/mapping_eofiles/bowtie2_map.%j.out # Standard output
+#SBATCH --error=/scratch/Shares/dk/bee_brain/mapping_eofiles/bowtie2_map.%j.err # Standard error log
+
+
+### Display the job context
+echo Running on host `hostname`
+echo Time is `date`
+echo Directory is `pwd`
+
+### Assign path to variable for convenience later.
+BEE_BRAIN=/scratch/Shares/dk/bee_brain
+
+### Load modules
+module load samtools/1.3.1
+module load bowtie/2.2.9
+
+### map reads with bowtie2
+### bowtie2 [options]* -x <bt2-idx> {-1 <m1> -2 <m2> | -U <r>} [-S <sam>]
+
+bowtie2 -t --very-sensitive -p 10 \
+-x $BEE_BRAIN/ref_index/ref_genome \
+-U $BEE_BRAIN/fastq/SRR4045880.fastq \
+-S $BEE_BRAIN/SRR4045880_X_120m/bowtie2_SRR4045880.sam \
+2> $BEE_BRAIN /SRR4045880_X_120m/bowtie2_SRR4045880.stderr
+
+
+### convert SAM to BAM
+### samtools view [options] <in.bam>|<in.sam>|<in.cram> [region ...]
+samtools view -Sb -o $BEE_BRAIN/SRR4045880_X_120m/bowtie2_SRR4045880.bam $BEE_BRAIN/SRR4045880_X_120m/bowtie2_SRR4045880.sam
+
+### sort BAM
+### Usage: samtools sort [options...] [in.bam]
+samtools sort $BEE_BRAIN/SRR4045880_X_120m/bowtie2_SRR4045880.bam -o $BEE_BRAIN/SRR4045880_X_120m/bowtie2_SRR4045880.sorted.bam
+
+### Index sorted BAM file; needed for downstream steps
+### Usage: samtools index [-bc] [-m INT] <in.bam> [out.index]
+samtools index $BEE_BRAIN/SRR4045880_X_120m/bowtie2_SRR4045880.sorted.bam
+
+#Final time stamp
+echo Time is `date`
+
+################################# CALL PEAKS WITH MACS ###############################
+
+
+------------------------- 04/05/2018 BUILD INDEX & MAP ———————————————
+
+%%%%%%%%%%%%% MACS: GIVE IT EXP & CONTROL BAM’S %%%%%%%%%%%%%
+
+#!/bin/bash
+#SBATCH --job-name=DMN_MACS_30 # Job name
+#SBATCH --mail-type=ALL # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=ding1018@colorado.edu# Where to send mail
+#SBATCH --nodes=1  # Number of distinct nodes requested
+#SBATCH --ntasks=1 # Number of CPU (processer cores i.e. tasks)
+#SBATCH --time=04:00:00 # Time limit hrs:min:sec
+#SBATCH -p short
+#SBATCH --mem=20gb # Memory limit
+#SBATCH --output=/scratch/Shares/dk/bee_brain/macs_eofiles/peaks_EO.%j.out
+#SBATCH --error=/scratch/Shares/dk/bee_brain/macs_eofiles/peaks_EO.%j.err
+
+pwd; hostname; date
+date
+module load python/2.7.14/MACS/2.1.1
+
+HERE=/scratch/Shares/dk/bee_brain
+
+macs2 callpeak \
+-t $HERE/SRR4045880_X_120m/bowtie2_SRR4045880.sorted.bam \
+-c $HERE/SRR4045874_C_120m/bowtie2_SRR4045874.sorted.bam \
+-f BAM -g 2.46e8 -B -q 0.01 -n $HERE/macs_out/chip_120m
+
+echo qual
+date
+
+
+
+

@@ -1,0 +1,16 @@
+
+
+
+bowtie2-build -f $/Users/ding1018/bee_brain/ref_genome/GCF_000002195.4_Amel_4.5_genomic.fna $/Users/ding1018/bee_brain/ref_genome
+
+
+bowtie2 -q --phred33 --fast -p 16 -x /Users/ding1018/bee_brain/INDEX
+/Users/ding1018/bee_brain/fastq/SRR4045880.fastq
+-S /Users/ding1018/bee_brain/SRR4045880.sam
+
+
+samtools view -bS -o /Users/ding1018/bee_brain/SRR4045880.bam Users/ding1018/bee_brain/SRR4045880.sam
+
+
+
+samtools sort /Users/ding1018/bee_brain/SRR4045880.bam /Users/ding1018/bee_brain/SRR4045880.sorted
